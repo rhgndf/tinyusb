@@ -203,6 +203,10 @@
       "inherits": "default"
     },
     {
+      "name": "f460_core_board",
+      "inherits": "default"
+    },
+    {
       "name": "feather_m0_express",
       "inherits": "default"
     },
@@ -1239,6 +1243,11 @@
       "name": "f1c100s",
       "description": "Build preset for the f1c100s board",
       "configurePreset": "f1c100s"
+    },
+    {
+      "name": "f460_core_board",
+      "description": "Build preset for the f460_core_board board",
+      "configurePreset": "f460_core_board"
     },
     {
       "name": "feather_m0_express",
@@ -2864,6 +2873,19 @@
         {
           "type": "build",
           "name": "f1c100s"
+        }
+      ]
+    },
+    {
+      "name": "f460_core_board",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "f460_core_board"
+        },
+        {
+          "type": "build",
+          "name": "f460_core_board"
         }
       ]
     },

@@ -719,6 +719,14 @@
 
   #define TU_ATTR_FAST_FUNC __attribute__((section(".fast")))
 
+//--------------------------------------------------------------------+
+// HDSC
+//--------------------------------------------------------------------+
+#elif TU_CHECK_MCU(OPT_MCU_HC32F4)
+  #define TUP_USBIP_DWC2
+  #define TUP_USBIP_DWC2_HC32
+  #define TUP_DCD_ENDPOINT_MAX 6
+
 #endif
 
 // External USB controller

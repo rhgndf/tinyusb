@@ -20,6 +20,7 @@ hw/mcu/artery/at32f45x                    https://github.com/ArteryTek/AT32F45x_
 hw/mcu/bridgetek/ft9xx/ft90x-sdk          https://github.com/BRTSG-FOSS/ft90x-sdk.git                       03f74eac84645178fdde7f2e5ca9acdcb7bd9dcd  ft9xx
 hw/mcu/broadcom                           https://github.com/adafruit/broadcom-peripherals.git              08370086080759ed54ac1136d62d2ad24c6fa267  broadcom_32bit broadcom_64bit
 hw/mcu/gd/nuclei-sdk                      https://github.com/Nuclei-Software/nuclei-sdk.git                 7eb7bfa9ea4fbeacfafe1d5f77d5a0e6ed3922e7  gd32vf103
+hw/mcu/hdsc/sdk-csp-hc32f4                https://github.com/hdscmcu/sdk-csp-hc32f4.git                     ff12ff83e427e8ea9584a56dc19751cd09b903de  hc32f4
 hw/mcu/hpmicro/hpm_sdk                    https://github.com/hpmicro/hpm_sdk                                8d2af741ecc4aaa82d7ee395dc1ce25d7070c3ff  hpmicro
 hw/mcu/infineon/mtb-xmclib-cat3           https://github.com/Infineon/mtb-xmclib-cat3.git                   daf5500d03cba23e68c2f241c30af79cd9d63880  xmc4000
 hw/mcu/microchip                          https://github.com/hathach/microchip_driver.git                   9e8b37e307d8404033bb881623a113931e1edf27  sam3x samd11 samd21 samd51 samd5x_e5x same5x same7x samd2x_l2x samg
