@@ -46,17 +46,15 @@ extern "C" {
 #define XTAL_IN_PIN         GPIO_PIN_01
 #define XTAL_OUT_PIN        GPIO_PIN_00
 
-#define PRINT_UART          CM_USART2
-#define PRINT_UART_CLOCK    FCG1_PERIPH_USART2
-#define PRINT_UART_TX_PORT  GPIO_PORT_A
-#define PRINT_UART_TX_PIN   GPIO_PIN_02
-#define PRINT_UART_TX_FUNC  GPIO_FUNC_36
-#define PRINT_UART_RX_PORT  GPIO_PORT_A
-#define PRINT_UART_RX_PIN   GPIO_PIN_03
-#define PRINT_UART_RX_FUNC  GPIO_FUNC_37
-
 #define USBFS_INT_IRQn      INT003_IRQn
 #define USBFS_INT_SRC       INT_SRC_USBFS_GLB
+#define USBFS_DM_PORT       GPIO_PORT_A
+#define USBFS_DM_PIN        GPIO_PIN_11
+#define USBFS_DP_PORT       GPIO_PORT_A
+#define USBFS_DP_PIN        GPIO_PIN_12
+#define USBFS_VBUS_PORT     GPIO_PORT_A
+#define USBFS_VBUS_PIN      GPIO_PIN_09
+#define USBFS_VBUS_FUNC     GPIO_FUNC_10
 
 #ifdef __cplusplus
 }

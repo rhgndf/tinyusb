@@ -9,6 +9,7 @@ CPU_CORE ?= cortex-m4
 
 CFLAGS += \
   -DCFG_TUSB_MCU=OPT_MCU_HC32F4 \
+  -DBOARD_TUD_MAX_SPEED=OPT_MODE_FULL_SPEED \
   -DHC32F460 \
   -DUSE_DDL_DRIVER
 
@@ -42,7 +43,6 @@ SRC_C += \
   $(HC32_DDL)/src/hc32_ll_interrupts.c \
   $(HC32_DDL)/src/hc32_ll_pwc.c \
   $(HC32_DDL)/src/hc32_ll_sram.c \
-  $(HC32_DDL)/src/hc32_ll_usart.c \
   $(HC32_DDL)/src/hc32_ll_utility.c
 
 SRC_S += $(HC32_DEVICE)/Source/GCC/startup_hc32f460.S

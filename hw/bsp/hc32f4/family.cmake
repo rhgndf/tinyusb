@@ -39,7 +39,6 @@ function(family_add_board BOARD_TARGET)
     ${HC32_DDL}/src/hc32_ll_interrupts.c
     ${HC32_DDL}/src/hc32_ll_pwc.c
     ${HC32_DDL}/src/hc32_ll_sram.c
-    ${HC32_DDL}/src/hc32_ll_usart.c
     ${HC32_DDL}/src/hc32_ll_utility.c
     )
 
@@ -54,6 +53,7 @@ function(family_add_board BOARD_TARGET)
   target_compile_definitions(${BOARD_TARGET} PUBLIC
     HC32F460
     USE_DDL_DRIVER
+    BOARD_TUD_MAX_SPEED=OPT_MODE_FULL_SPEED
     )
 
   target_compile_options(${BOARD_TARGET} PRIVATE

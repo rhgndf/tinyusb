@@ -101,19 +101,15 @@ static void gpio_init(void) {
   (void)GPIO_Init(BUTTON_PORT, BUTTON_PIN, &gpio_init);
 }
 
-static void uart_init(void) {
-  stc_usart_uart_init_t uart_init;
+static void usb_gpio_init(void) {
+  stc_gpio_init_t gpio_init;
 
-  FCG_Fcg1PeriphClockCmd(PRINT_UART_CLOCK, ENABLE);
-  GPIO_SetFunc(PRINT_UART_TX_PORT, PRINT_UART_TX_PIN, PRINT_UART_TX_FUNC);
-  GPIO_SetFunc(PRINT_UART_RX_PORT, PRINT_UART_RX_PIN, PRINT_UART_RX_FUNC);
+  (void)GPIO_StructInit(&gpio_init);
+  gpio_init.u16PinAttr = PIN_ATTR_ANALOG;
+  (void)GPIO_Init(USBFS_DM_PORT, USBFS_DM_PIN, &gpio_init);
+  (void)GPIO_Init(USBFS_DP_PORT, USBFS_DP_PIN, &gpio_init);
 
-  (void)USART_UART_StructInit(&uart_init);
-  uart_init.u32ClockSrc = USART_CLK_SRC_INTERNCLK;
-  uart_init.u32Baudrate = CFG_BOARD_UART_BAUDRATE;
-  uart_init.u32CKOutput = USART_CK_OUTPUT_ENABLE;
-  (void)USART_UART_Init(PRINT_UART, &uart_init, NULL);
-  USART_FuncCmd(PRINT_UART, USART_TX | USART_RX, ENABLE);
+  GPIO_SetFunc(USBFS_VBUS_PORT, USBFS_VBUS_PIN, USBFS_VBUS_FUNC);
 }
 
 static void usb_int_init(void) {
@@ -140,7 +136,7 @@ void board_init(void) {
 #endif
 
   gpio_init();
-  uart_init();
+  usb_gpio_init();
   usb_int_init();
 
   __enable_irq();
@@ -163,24 +159,17 @@ uint32_t board_button_read(void) {
 }
 
 int board_uart_read(uint8_t *buf, int len) {
-  int count = 0;
+  (void)buf;
+  (void)len;
 
-  while ((count < len) && (USART_GetStatus(PRINT_UART, USART_FLAG_RX_FULL) == SET)) {
-    buf[count++] = (uint8_t)USART_ReadData(PRINT_UART);
-  }
-
-  return count;
+  return -1;
 }
 
 int board_uart_write(const void *buf, int len) {
-  const uint8_t *buf8 = (const uint8_t *)buf;
+  (void)buf;
+  (void)len;
 
-  for (int i = 0; i < len; i++) {
-    while (USART_GetStatus(PRINT_UART, USART_FLAG_TX_EMPTY) != SET) {}
-    USART_WriteData(PRINT_UART, buf8[i]);
-  }
-
-  return len;
+  return -1;
 }
 
 #if CFG_TUSB_OS == OPT_OS_NONE
