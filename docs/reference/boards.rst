@@ -90,6 +90,15 @@ Board               Name                Family     URL                          
 sipeed_longan_nano  Sipeed Longan Nano  gd32vf103  https://longan.sipeed.com/en/
 ==================  ==================  =========  =============================  ======
 
+HDSC
+----
+
+===============  ===============  ======  ===================  ====
+Board            Name             Family  URL                  Note
+===============  ===============  ======  ===================  ====
+f460_core_board  F460 Core Board  hc32f4  https://vcc-gnd.com  -
+===============  ===============  ======  ===================  ====
+
 HPMicro
 -------
 
