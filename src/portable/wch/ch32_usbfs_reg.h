@@ -184,6 +184,10 @@
   #define CH32_USBFS_EP_MANUAL_TOG    1
   #define CH32_USBFS_EP4_SHARES_EP0   1
   #define USBHD_IRQn USBFS_IRQn
+#elif CFG_TUSB_MCU == OPT_MCU_CH32H41X
+  #include <ch32h417.h>
+  #define USBOTG_FS USBFSD
+  #define USBHD_IRQn USBFS_IRQn
 #endif
 
 #ifdef __GNUC__

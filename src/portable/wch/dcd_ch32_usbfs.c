@@ -49,6 +49,11 @@
     #define EP_DMA(ep)     (*ch32_usbfs_ep_dma_reg(ep))
     #define EP_TX_LEN(ep)  ((&USBOTG_FS->UEP0_TX_LEN)[2 * (ep) + ((ep) > 4 ? 24 : 0)])
     #define EP_CTRL(ep)    ((&USBOTG_FS->UEP0_CTRL_H)[2 * (ep) + ((ep) > 4 ? 24 : 0)])
+  #elif CFG_TUSB_MCU == OPT_MCU_CH32H41X
+    #define EP_DMA(ep)     ((&USBOTG_FS->UEP0_DMA)[ep])
+    #define EP_TX_LEN(ep)  (((volatile uint16_t*) (uintptr_t) &USBOTG_FS->UEP0_TX_LEN)[2 * (ep)])
+    #define EP_TX_CTRL(ep) ((&USBOTG_FS->UEP0_TX_CTRL)[4 * ep])
+    #define EP_RX_CTRL(ep) ((&USBOTG_FS->UEP0_RX_CTRL)[4 * ep])
   #else
     #define EP_DMA(ep)     ((&USBOTG_FS->UEP0_DMA)[ep])
     #define EP_TX_LEN(ep)  ((&USBOTG_FS->UEP0_TX_LEN)[2 * ep])
