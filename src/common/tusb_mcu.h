@@ -721,6 +721,17 @@
   #define TUP_USBIP_DWC2_HC32
   #define TUP_DCD_ENDPOINT_MAX 6
 
+//--------------------------------------------------------------------+
+// Puya
+//--------------------------------------------------------------------+
+#elif TU_CHECK_MCU(OPT_MCU_PY32F0)
+  #define TUP_USBIP_MUSB
+  #define TUP_USBIP_MUSB_PY32
+  #define TUP_DCD_ENDPOINT_MAX 6
+  // PY32 shares the buffer between IN and OUT of the same endpoint number.
+  // Possible to share IN/OUT if only one direction is armed at any one time
+  #define CFG_TUD_ENDPOINT_ONE_DIRECTION_ONLY 1
+
 #endif
 
 // External USB controller
